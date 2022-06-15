@@ -1,3 +1,3 @@
-export default function RenderDropdownItem(props){
-  return <option value={`${props.i + 1}`}>{props.item}</option>;
+export default function RenderDropdownItem({ item, i }){
+  return <option value={`${i + 1}`}>{item}</option>;
 }

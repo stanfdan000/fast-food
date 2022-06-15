@@ -1,15 +1,21 @@
 .body {
-  background-position: 500px;
-  background-image: url(./wp.jpg); 
+
+  
 }
 .App {
-  
+  top: 55px;
+  left: 55px;
+  display: flex;
+  flex-wrap: nowrap;
   text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
 }
 
 .App-logo {
-  background-position: 500px;
-  background-image: url(./wp.jpg);
+ 
   height: 100vmin;
   
 }
@@ -42,4 +48,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+.order-img-div {
+  display: flex;
+  gap: 20px;
 }
