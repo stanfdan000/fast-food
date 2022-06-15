@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import React from 'react';
+import FoodDropdown from './FoodDropdown';
+import OrderImages from './OrderImages';
+
+const foodArr = ['burger', 'hotdog', 'nuggets'];
 
 function App() {
+  const [foodId, setFoodId] = useState(1);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className='title'></h1>
+      <h2 className='order'></h2>
+      <OrderImages
+        foodId={foodId}
+        foodArr={foodArr}
+      />
+
+
+      <section className='dropdown-section'>
+        <div>
+          <FoodDropdown setFoodId={setFoodId} foodArr={foodArr} />
+        </div>
+      </section>
+        
+  
     </div>
   );
 }
