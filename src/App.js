@@ -5,6 +5,9 @@ import FoodDropdown from './FoodDropdown.js';
 import OrderImages from './OrderImages.js';
 import DrinkDropdown from './DrinkDropdown.js';
 import SideDropdown from './SideDropdown.js';
+import InstructionList from './InstructionList.js';
+import InstructionForm from './InstructionForm.js';
+import OrderNameInput from './OrderNameInput.js';
 
 
 const drinkArr = ['toxic Rick Energy', 'operation phoenix', 'fleeb juice'];
@@ -15,11 +18,15 @@ function App() {
   const [foodId, setFoodId] = useState(1);
   const [drinkId, setDrinkId] = useState(1);
   const [sideId, setSideId] = useState(1);
+  const [instructions, setInstructions] = useState([]);
+  const [OrderName, setOrderName] = useState(``);
+
+
   return (
     <div className="App">
       
-      <h1 className='title'></h1>
-      <h2 className='order'></h2>
+      <h1 className='title'>Order Your Food Fast!!!!</h1>
+      <h2 className='order'>ORDER FOR:{OrderName}</h2>
       <OrderImages
         foodId={foodId}
         foodArr={foodArr}
@@ -41,6 +48,22 @@ function App() {
           <SideDropdown setSideId={setSideId} sideArr={sideArr} />
         </div>
       </section>
+
+      <section>
+        {
+          <OrderNameInput setOrderName={setOrderName} />
+        }
+      </section>
+
+      <section>
+        <InstructionForm instructions={instructions} setInstructions={setInstructions} />
+      </section>
+      <section>
+        <ul>
+          <InstructionList instructions={instructions} />
+        </ul>
+      </section>
+
 
 
         
